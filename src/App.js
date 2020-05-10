@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import { Link } from "@reach/router";
+import { Router, Link } from "@reach/router";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
           <h1>Rick and Morty</h1>
         </Link>
       </header>
+      <Router>
+        <Home path="/" />
+      </Router>
     </div>
   );
 }
