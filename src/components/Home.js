@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CharacterDetails from "./CharacterDetails";
+import AllCharacters from "./AllCharacters";
 function Home() {
   const [characters, setCharacters] = useState([]);
   const [characterSearch, setCharacterSearch] = useState("");
@@ -100,7 +100,7 @@ function Home() {
         <div className="row">
           {filteredCharacter.slice(0, 10).map((character, id) => (
             <div key={id}>
-              <CharacterDetails key={id} {...character} />
+              <AllCharacters key={id} {...character} />
             </div>
           ))}
         </div>

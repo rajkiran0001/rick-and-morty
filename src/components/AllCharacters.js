@@ -1,6 +1,6 @@
 import React from "react";
 
-function CharacterDetails(props) {
+function AllCharacters(props) {
   const { name, image, species, status, created } = props;
   return (
     <div>
@@ -15,4 +15,4 @@ function CharacterDetails(props) {
   );
 }
 
-export default CharacterDetails;
+export default AllCharacters;
