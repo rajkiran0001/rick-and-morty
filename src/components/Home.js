@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CharacterDetails from "./CharacterDetails";
 function Home() {
   const [characters, setCharacters] = useState([]);
 
@@ -20,15 +21,7 @@ function Home() {
         <div className="row">
           {characters.map((character, id) => (
             <div key={id}>
-              <div>
-                <p>
-                  <img src={character.image} alt={character.name} />
-                </p>
-                <p>name: {character.name}</p>
-                <p>species: {character.species}</p>
-                <p>status: {character.status}</p>
-                <p>created: {character.created.slice(0, 10)}</p>
-              </div>
+              <CharacterDetails key={id} {...character} />
             </div>
           ))}
         </div>
