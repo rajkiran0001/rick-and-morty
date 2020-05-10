@@ -3,6 +3,8 @@ import axios from "axios";
 import CharacterDetails from "./CharacterDetails";
 function Home() {
   const [characters, setCharacters] = useState([]);
+  const [characterSearch, searchCharacter] = useState("");
+  const [filteredCharacter, setFilteredCharacter] = useState([]);
 
   useEffect(() => {
     axios
@@ -15,11 +17,25 @@ function Home() {
       });
   }, []);
 
+  useEffect(() => {
+    setFilteredCharacter(
+      characters.filter((character) =>
+        character.name.toLowerCase().includes(characterSearch.toLowerCase())
+      )
+    );
+  }, [characterSearch, characters]);
+
   return (
     <>
+      <input
+        type="text"
+        placeholder="Search characters"
+        onChange={(e) => searchCharacter(e.target.value)}
+      />
+
       <div className="container">
         <div className="row">
-          {characters.map((character, id) => (
+          {filteredCharacter.map((character, id) => (
             <div key={id}>
               <CharacterDetails key={id} {...character} />
             </div>
