@@ -5,8 +5,18 @@ function Home() {
   const [characters, setCharacters] = useState([]);
   const [characterSearch, setCharacterSearch] = useState("");
   const [statusSearch, setStatusSearch] = useState("");
+  const [fromDate, setFromDate] = useState("");
+  const [tillDate, setTillDate] = useState("");
   let [page, setPage] = useState(1);
   const [filteredCharacter, setFilteredCharacter] = useState([]);
+
+  const submitDate = (e) => {
+    e.preventDefault();
+    var result = characters.filter(function (date) {
+      return date.created >= fromDate && date.created <= tillDate;
+    });
+    setCharacters(result);
+  };
 
   useEffect(() => {
     axios
@@ -58,17 +68,34 @@ function Home() {
 
   return (
     <>
+      Characters:{" "}
       <input
         type="text"
         placeholder="Search characters"
         onChange={(e) => setCharacterSearch(e.target.value)}
       />
+      Status:{" "}
       <input
         type="text"
         placeholder="Search Status"
         onChange={(e) => setStatusSearch(e.target.value)}
       />
-
+      <form onSubmit={submitDate}>
+        From:{" "}
+        <input
+          type="text"
+          placeholder="2017-11-04"
+          onChange={(e) => setFromDate(e.target.value)}
+        />
+        Till:{" "}
+        <input
+          type="text"
+          placeholder="2017-11-05"
+          onChange={(e) => setTillDate(e.target.value)}
+        />{" "}
+        <button type="submit">Search</button>
+      </form>
+      <br />
       <div className="container">
         <div className="row">
           {filteredCharacter.slice(0, 10).map((character, id) => (
@@ -78,7 +105,6 @@ function Home() {
           ))}
         </div>
       </div>
-
       <b>page: {page >= 1 ? page : "0"}</b>
       <div>
         <button onClick={previousPage}>Previous Page</button>
