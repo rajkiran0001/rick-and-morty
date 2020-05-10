@@ -5,7 +5,7 @@ function Home() {
   const [characters, setCharacters] = useState([]);
   const [characterSearch, setCharacterSearch] = useState("");
   const [statusSearch, setStatusSearch] = useState("");
-
+  let [page, setPage] = useState(1);
   const [filteredCharacter, setFilteredCharacter] = useState([]);
 
   useEffect(() => {
@@ -31,6 +31,31 @@ function Home() {
     );
   }, [characterSearch, statusSearch, characters]);
 
+  const fetchPage = (page) => {
+    axios
+      .get(`https://rickandmortyapi.com/api/character/?page=${page}`)
+      .then((res) => {
+        setCharacters(res.data.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const previousPage = () => {
+    if (page >= 2) {
+      setPage((page = page - 1));
+      fetchPage(page);
+    }
+  };
+
+  const nextPage = (e) => {
+    if (page >= 0) {
+      setPage((page = page + 1));
+      fetchPage(page);
+    }
+  };
+
   return (
     <>
       <input
@@ -46,12 +71,18 @@ function Home() {
 
       <div className="container">
         <div className="row">
-          {filteredCharacter.map((character, id) => (
+          {filteredCharacter.slice(0, 10).map((character, id) => (
             <div key={id}>
               <CharacterDetails key={id} {...character} />
             </div>
           ))}
         </div>
+      </div>
+
+      <b>page: {page >= 1 ? page : "0"}</b>
+      <div>
+        <button onClick={previousPage}>Previous Page</button>
+        <button onClick={nextPage}>Next Page</button>
       </div>
     </>
   );
