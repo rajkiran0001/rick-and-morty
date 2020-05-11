@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AllCharacters from "./AllCharacters";
-function Home() {
+function HomePage() {
   const [characters, setCharacters] = useState([]);
   const [characterSearch, setCharacterSearch] = useState("");
   const [statusSearch, setStatusSearch] = useState("");
@@ -114,4 +114,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

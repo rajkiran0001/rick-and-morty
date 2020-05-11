@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import { Router, Link } from "@reach/router";
-import Home from "./components/Home";
+import Home from "./components/HomePage";
 import SingleCharacter from "./components/SingleCharacter";
-let x;
+
 function App() {
   return (
     <div className="App">
