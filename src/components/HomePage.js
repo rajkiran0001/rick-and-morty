@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AllCharacters from "./AllCharacters";
+import "./global.css"
+
 function HomePage() {
   const [characters, setCharacters] = useState([]);
   const [characterSearch, setCharacterSearch] = useState("");
@@ -70,6 +72,7 @@ function HomePage() {
     <>
       Characters:{" "}
       <input
+      className="input"
         type="text"
         placeholder="Search characters"
         onChange={(e) => setCharacterSearch(e.target.value)}
@@ -77,6 +80,7 @@ function HomePage() {
       Status:{" "}
       <input
         type="text"
+        className="input"
         placeholder="Search Status"
         onChange={(e) => setStatusSearch(e.target.value)}
       />
@@ -84,12 +88,14 @@ function HomePage() {
         From:{" "}
         <input
           type="text"
+          className="input"
           placeholder="2017-11-04"
           onChange={(e) => setFromDate(e.target.value)}
         />
         Till:{" "}
         <input
           type="text"
+          className="input"
           placeholder="2017-11-05"
           onChange={(e) => setTillDate(e.target.value)}
         />{" "}
@@ -106,9 +112,9 @@ function HomePage() {
         </div>
       </div>
       <b>page: {page >= 1 ? page : "0"}</b>
-      <div data-test="pagination">
-        <button onClick={previousPage}>Previous Page</button>
-        <button onClick={nextPage}>Next Page</button>
+      <div >
+        <button className="button" data-test="pagination" onClick={previousPage}>Previous Page</button>
+        <button className="button" onClick={nextPage}>Next Page</button>
       </div>
     </>
   );
