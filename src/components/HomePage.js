@@ -102,15 +102,13 @@ function HomePage() {
         <button type="submit">Search</button>
       </form>
       <br />
-      <div className="container">
-        <div className="row">
+        <div className="mainCards">
           {filteredCharacter.slice(0, 10).map((character, id) => (
-            <div key={id}>
+            <div key={id} >
               <AllCharacters key={id} {...character} />
             </div>
           ))}
         </div>
-      </div>
       <b>page: {page >= 1 ? page : "0"}</b>
       <div >
         <button className="button" data-test="pagination" onClick={previousPage}>Previous Page</button>

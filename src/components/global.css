@@ -13,3 +13,17 @@
   border-color: dodgerblue;
   box-shadow: 0 0 8px 0 dodgerblue;
 }
+
+.mainCards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.characterCard {
+  border-radius: 10px;
+  margin: 20px;
+  background: white;
+  align-items: center;
+  border: solid 3px black;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./global.css"
 
 function SingleCharacter(route) {
   const [data, setData] = useState({});
@@ -20,7 +21,7 @@ function SingleCharacter(route) {
   return loading ? (
     <p>Loading...</p>
   ) : (
-    <div>
+    <div className="characterCard">
       <img alt={data.image} src={data.image} />
       <p>{data.gender}</p>
       <p>{data.origin.name}</p>
