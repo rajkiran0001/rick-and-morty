@@ -87,16 +87,18 @@ function HomePage() {
       <form onSubmit={submitDate}>
         <strong>From:</strong>{" "}
         <input
-          type="text"
+          type="date"
           className="input"
-          placeholder="2017-11-04"
+          min="2016-11-04"
+          max="2022-12-31"
           onChange={(e) => setFromDate(e.target.value)}
         />
         <strong>Till:</strong>{" "}
         <input
-          type="text"
+          type="date"
           className="input"
-          placeholder="2017-11-05"
+          min="2016-11-04"
+          max="2022-12-31"
           onChange={(e) => setTillDate(e.target.value)}
         />{" "}
         <button type="submit">Search</button>

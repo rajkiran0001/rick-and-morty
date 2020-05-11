@@ -14,9 +14,9 @@ function AllCharacters(props) {
           <img src={image} alt={name} />
         </p>
         <p><strong>Name: </strong>{name}</p>
-        <p><strong>species: </strong>{species}</p>
-        <p><strong>status: </strong>{status}</p>
-        <p><strong>created: </strong>{created.slice(0, 10)}</p>
+        <p><strong>Species: </strong>{species}</p>
+        <p><strong>Status: </strong>{status}</p>
+        <p><strong>Created: </strong>{created.slice(0, 10)}</p>
       </Link>
     </div>
   );
