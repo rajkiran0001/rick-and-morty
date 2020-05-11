@@ -24,8 +24,8 @@ function SingleCharacter(route) {
   ) : (
     <div className="characterCard">
       <img alt={data.image} src={data.image} />
-      <p>{data.gender}</p>
-      <p>{data.origin.name}</p>
+       <p> <strong>Gender:</strong> {data.gender}</p>
+      <p><strong>Origin: </strong>{data.origin.name}</p>
       <div>
         <h1 className="episode">Episodes</h1>
         {data.episode.map((item) => (

@@ -70,14 +70,14 @@ function HomePage() {
 
   return (
     <>
-      Characters:{" "}
+      <strong>Characters:</strong>{" "}
       <input
       className="input"
         type="text"
         placeholder="Search characters"
         onChange={(e) => setCharacterSearch(e.target.value)}
       />
-      Status:{" "}
+      <strong>Status:</strong>{" "}
       <input
         type="text"
         className="input"
@@ -85,14 +85,14 @@ function HomePage() {
         onChange={(e) => setStatusSearch(e.target.value)}
       />
       <form onSubmit={submitDate}>
-        From:{" "}
+        <strong>From:</strong>{" "}
         <input
           type="text"
           className="input"
           placeholder="2017-11-04"
           onChange={(e) => setFromDate(e.target.value)}
         />
-        Till:{" "}
+        <strong>Till:</strong>{" "}
         <input
           type="text"
           className="input"

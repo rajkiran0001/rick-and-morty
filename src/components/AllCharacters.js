@@ -11,10 +11,10 @@ function AllCharacters(props) {
         <p>
           <img src={image} alt={name} />
         </p>
-        <p>name: {name}</p>
-        <p>species: {species}</p>
-        <p>status: {status}</p>
-        <p>created: {created.slice(0, 10)}</p>
+        <p><strong>Name: </strong>{name}</p>
+        <p><strong>species: </strong>{species}</p>
+        <p><strong>status: </strong>{status}</p>
+        <p><strong>created: </strong>{created.slice(0, 10)}</p>
       </Link>
     </div>
   );
