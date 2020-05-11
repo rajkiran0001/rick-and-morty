@@ -6,7 +6,7 @@ import "../global.css"
 function SingleCharacter(route) {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
-
+//it runs when the user clicks the character. the id is passed as props
   useEffect(() => {
     axios
       .get(`https://rickandmortyapi.com/api/character/${route.id}`)
@@ -18,7 +18,7 @@ function SingleCharacter(route) {
         console.log(err);
       });
   }, [route.id]);
-
+//conditional rendering of the elements. Data is rendered once the result is available
   return loading ? (
     <p data-test="loading">Loading...</p>
   ) : (
@@ -35,7 +35,7 @@ function SingleCharacter(route) {
     </div>
   );
 }
-
+//Typechecking with proptypes
 SingleCharacter.propTypes = {
   gender: PropTypes.string,
   name: PropTypes.string,

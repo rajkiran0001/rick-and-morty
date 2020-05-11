@@ -11,7 +11,7 @@ function HomePage() {
   const [tillDate, setTillDate] = useState("");
   let [page, setPage] = useState(1);
   const [filteredCharacter, setFilteredCharacter] = useState([]);
-
+// onclick submit event of two different dates
   const submitDate = (e) => {
     e.preventDefault();
     var result = characters.filter(function (date) {
@@ -19,7 +19,7 @@ function HomePage() {
     });
     setCharacters(result);
   };
-
+//api is called when the page is initial loaded
   useEffect(() => {
     axios
       .get("https://rickandmortyapi.com/api/character/")
@@ -30,7 +30,7 @@ function HomePage() {
         console.log(err);
       });
   }, []);
-
+//filter the characters array based on user search. It is called only when the user search for the character 
   useEffect(() => {
     setFilteredCharacter(
       characters.filter(
@@ -42,7 +42,7 @@ function HomePage() {
       )
     );
   }, [characterSearch, statusSearch, characters]);
-
+//fetch the charecters based on page number and set it to character variable
   const fetchPage = (page) => {
     axios
       .get(`https://rickandmortyapi.com/api/character/?page=${page}`)
@@ -53,14 +53,14 @@ function HomePage() {
         console.log(err);
       });
   };
-
+//On everyclick decrement the page by one 
   const previousPage = () => {
     if (page >= 2) {
       setPage((page = page - 1));
       fetchPage(page);
     }
   };
-
+//On everyclick increment the page by one 
   const nextPage = (e) => {
     if (page >= 0) {
       setPage((page = page + 1));
@@ -70,7 +70,7 @@ function HomePage() {
 
   return (
     <>
-      <strong>Characters:</strong>{" "}
+      <strong className="myClass">Characters:</strong>{" "}
       <input
       className="input"
         type="text"
@@ -102,6 +102,7 @@ function HomePage() {
         <button type="submit">Search</button>
       </form>
       <br />
+      {/* filter array of the characters based on user input and reduce it to 10 characters per page. AllCharacters component is called for every character in the array*/}
         <div className="mainCards">
           {filteredCharacter.slice(0, 10).map((character, id) => (
             <div key={id} >

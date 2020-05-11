@@ -20,4 +20,9 @@ describe("SingleCharacter Component", () => {
     expect(wrapper.length).toBe(1);
   });
 
+  it("Text equal to Loading...", () => {
+    const text = component.find("p").text();
+    expect(text).toEqual("Loading...");
+  });
+
 });
