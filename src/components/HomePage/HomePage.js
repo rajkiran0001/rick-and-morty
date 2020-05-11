@@ -74,14 +74,14 @@ function HomePage() {
       <input
       className="input"
         type="text"
-        placeholder="Search characters"
+        placeholder="Search Characters Rick, Beth..."
         onChange={(e) => setCharacterSearch(e.target.value)}
       />
       <strong>Status:</strong>{" "}
       <input
         type="text"
         className="input"
-        placeholder="Search Status"
+        placeholder="Search Status Alive, Dead..."
         onChange={(e) => setStatusSearch(e.target.value)}
       />
       <form onSubmit={submitDate}>
@@ -112,7 +112,7 @@ function HomePage() {
             </div>
           ))}
         </div>
-      <b>page: {page >= 1 && page <= 29? page : "30"}</b>
+      <b>Page: {page >= 1 && page <= 29? page : "30"}</b>
       <div >
         <button className="button" data-test="pagination" onClick={previousPage}>Previous Page</button>
         <button className="button" onClick={nextPage}>Next Page</button>
