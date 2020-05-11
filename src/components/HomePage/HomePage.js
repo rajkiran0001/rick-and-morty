@@ -55,14 +55,14 @@ function HomePage() {
   };
 //On everyclick decrement the page by one 
   const previousPage = () => {
-    if (page >= 2) {
+    if (page >= 2 && page <= 31) {
       setPage((page = page - 1));
       fetchPage(page);
     }
   };
 //On everyclick increment the page by one 
   const nextPage = (e) => {
-    if (page >= 0) {
+    if (page >= 0 && page <= 29) {
       setPage((page = page + 1));
       fetchPage(page);
     }
@@ -112,7 +112,7 @@ function HomePage() {
             </div>
           ))}
         </div>
-      <b>page: {page >= 1 ? page : "0"}</b>
+      <b>page: {page >= 1 && page <= 29? page : "30"}</b>
       <div >
         <button className="button" data-test="pagination" onClick={previousPage}>Previous Page</button>
         <button className="button" onClick={nextPage}>Next Page</button>
