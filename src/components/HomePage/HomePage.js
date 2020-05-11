@@ -74,14 +74,14 @@ function HomePage() {
       <input
       className="input"
         type="text"
-        placeholder="Search Characters Rick, Beth..."
+        placeholder="Search Characters. Rick, Beth..."
         onChange={(e) => setCharacterSearch(e.target.value)}
       />
       <strong>Status:</strong>{" "}
       <input
         type="text"
         className="input"
-        placeholder="Search Status Alive, Dead..."
+        placeholder="Search Status. Alive, Dead..."
         onChange={(e) => setStatusSearch(e.target.value)}
       />
       <form onSubmit={submitDate}>
