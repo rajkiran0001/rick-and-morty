@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AllCharacters from "../AllCharater/AllCharacters";
+import AllCharacters from "../AllCharaters/AllCharacters";
 import "../global.css"
 
 function HomePage() {
