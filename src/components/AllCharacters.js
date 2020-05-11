@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import PropTypes from "prop-types";
 import "./global.css"
 
 function AllCharacters(props) {
@@ -18,5 +19,14 @@ function AllCharacters(props) {
     </div>
   );
 }
+
+AllCharacters.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string,
+  status: PropTypes.string,
+  created: PropTypes.string,
+};
 
 export default AllCharacters;

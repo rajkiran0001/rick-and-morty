@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 import "./global.css"
 
 function SingleCharacter(route) {
@@ -34,5 +35,12 @@ function SingleCharacter(route) {
     </div>
   );
 }
+
+SingleCharacter.propTypes = {
+  gender: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  episode: PropTypes.arrayOf(PropTypes.string)
+};
 
 export default SingleCharacter;
