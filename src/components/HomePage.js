@@ -106,7 +106,7 @@ function HomePage() {
         </div>
       </div>
       <b>page: {page >= 1 ? page : "0"}</b>
-      <div>
+      <div data-test="pagination">
         <button onClick={previousPage}>Previous Page</button>
         <button onClick={nextPage}>Next Page</button>
       </div>
