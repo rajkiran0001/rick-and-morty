@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AllCharacters from "./AllCharacters";
-import "./global.css"
+import AllCharacters from "../AllCharater/AllCharacters";
+import "../global.css"
 
 function HomePage() {
   const [characters, setCharacters] = useState([]);

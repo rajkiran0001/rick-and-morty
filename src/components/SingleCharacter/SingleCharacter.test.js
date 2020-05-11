@@ -1,25 +1,23 @@
 import React from "react";
 import { shallow } from "enzyme";
-import HomePage from './HomePage'
+import SingleCharacter from './SingleCharacter'
 
-import { findByTestAttribute } from "../../Utils/index";
+import { findByTestAttribute } from "../../../Utils/index";
 
 const setUp = (props = {}) => {
-  const component = shallow(<HomePage {...props} />);
+  const component = shallow(<SingleCharacter {...props} />);
   return component;
 };
 
-describe("HomePage Component", () => {
+describe("SingleCharacter Component", () => {
   let component;
   beforeEach(() => {
     component = setUp();
   });
 
   it("Should render without errors", () => {
-    const wrapper = findByTestAttribute(component, "pagination");
+    const wrapper = findByTestAttribute(component, "loading");
     expect(wrapper.length).toBe(1);
   });
-
-  
 
 });

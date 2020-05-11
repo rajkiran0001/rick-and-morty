@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import PropTypes from "prop-types";
-import "./global.css"
+import "../global.css"
 
 function AllCharacters(props) {
   const { id, name, image, species, status, created } = props;

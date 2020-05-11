@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Router, Link } from "@reach/router";
-import Home from "./components/HomePage";
-import SingleCharacter from "./components/SingleCharacter";
+import Home from "./components/HomePage/HomePage";
+import SingleCharacter from "./components/SingleCharacter/SingleCharacter";
 
 function App() {
   return (
