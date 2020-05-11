@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import HomePage from './HomePage'
 
-import { findByTestAttribute } from "../../../Utils/index";
+import { findByTestAttribute } from "../../Utils/index";
 
 const setUp = (props = {}) => {
   const component = shallow(<HomePage {...props} />);
@@ -17,7 +17,6 @@ describe("HomePage Component", () => {
 
   it("Should render without errors", () => {
     const wrapper = findByTestAttribute(component, "pagination");
-    console.log(component.debug());
     expect(wrapper.length).toBe(1);
   });
 
