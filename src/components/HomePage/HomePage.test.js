@@ -20,4 +20,8 @@ describe("HomePage Component", () => {
     expect(wrapper.length).toBe(1);
   });
 
+  it("should render HomePage component", () => {
+    expect(component.exists()).toBe(true)
+  })
+
 });

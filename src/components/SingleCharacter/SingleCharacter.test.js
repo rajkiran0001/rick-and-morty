@@ -25,4 +25,8 @@ describe("SingleCharacter Component", () => {
     expect(text).toEqual("Loading...");
   });
 
+  it("should render SingleCharacter component", () => {
+    expect(component.exists()).toBe(true)
+  })
+
 });
